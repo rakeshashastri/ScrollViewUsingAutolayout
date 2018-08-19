@@ -1,2 +1,2 @@
-# scrollview-using-autolayout
-Implementing a UIScrollView using autolayout
+# UIScrollView using autolayout
+What the title says - implementing a UIScrollView with autolayout explaining how the contentSize of a scrollView is calculated.
