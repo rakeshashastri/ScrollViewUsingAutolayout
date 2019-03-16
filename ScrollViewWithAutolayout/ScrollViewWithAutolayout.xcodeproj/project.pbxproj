@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E9021F8223CCAB400F6EEDA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E9021F7223CCAB400F6EEDA /* Launch Screen.storyboard */; };
 		0EB76CCF2128746B0084B8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB76CCE2128746B0084B8B9 /* AppDelegate.swift */; };
 		0EB76CD12128746B0084B8B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB76CD02128746B0084B8B9 /* ViewController.swift */; };
 		0EB76CD6212874740084B8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB76CD5212874740084B8B9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E9021F7223CCAB400F6EEDA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0EB76CCB2128746B0084B8B9 /* ScrollViewWithAutolayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewWithAutolayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB76CCE2128746B0084B8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB76CD02128746B0084B8B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				0EB76CD02128746B0084B8B9 /* ViewController.swift */,
 				0EB76CD5212874740084B8B9 /* Assets.xcassets */,
 				0EB76CDA212874740084B8B9 /* Info.plist */,
+				0E9021F7223CCAB400F6EEDA /* Launch Screen.storyboard */,
 			);
 			path = ScrollViewWithAutolayout;
 			sourceTree = "<group>";
@@ -116,6 +119,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9021F8223CCAB400F6EEDA /* Launch Screen.storyboard in Resources */,
 				0EB76CD6212874740084B8B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 469RK8Q6EJ;
 				INFOPLIST_FILE = ScrollViewWithAutolayout/Info.plist;
@@ -264,6 +269,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RakeshaShastri.ScrollViewWithAutolayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -273,6 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 469RK8Q6EJ;
 				INFOPLIST_FILE = ScrollViewWithAutolayout/Info.plist;
@@ -282,6 +289,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RakeshaShastri.ScrollViewWithAutolayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

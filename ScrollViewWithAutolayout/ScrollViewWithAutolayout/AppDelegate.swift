@@ -3,7 +3,6 @@
 //  ScrollViewWithAutolayout
 //
 //  Created by Rakesha Shastri on 18/08/18.
-//  Copyright © 2018 RakeshaShastri. All rights reserved.
 //
 
 import UIKit

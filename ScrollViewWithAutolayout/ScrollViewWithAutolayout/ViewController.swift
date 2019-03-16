@@ -3,78 +3,85 @@
 //  ScrollViewWithAutolayout
 //
 //  Created by Rakesha Shastri on 18/08/18.
-//  Copyright © 2018 RakeshaShastri. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    lazy var scrollView: UIScrollView =  UIScrollView(frame: .zero)
+    //MARK: UI Element(s)
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .green
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
     
-    lazy var contentView: UIView = UIView()
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     lazy var redView: UIView = {
         let view = UIView()
         view.backgroundColor = .red
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var blueView: UIView = {
         let view = UIView()
         view.backgroundColor = .blue
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    //MARK: View Controller Method(s)
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
-        addScrollView()
-        addRedView()
-        addBlueView()
+        addSubviews()
+        addConstraints()
     }
     
-    /// Adds the scrollView and the contentView that is used to determine the contentSize of the scrollView.
-    func addScrollView() {
+    //MARK: Helper Method(s)
+    func addSubviews() {
         view.addSubview(scrollView)
-        
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentView)
+        contentView.addSubview(redView)
+        contentView.addSubview(blueView)
+    }
+    
+    func addConstraints() {
         scrollView.leadingAnchor    .constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.topAnchor        .constraint(equalTo: view.topAnchor).isActive = true
         scrollView.trailingAnchor   .constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.topAnchor        .constraint(equalTo: view.topAnchor).isActive = true
         scrollView.bottomAnchor     .constraint(equalTo: view.bottomAnchor).isActive = true
         
-        scrollView.addSubview(contentView)
+        //  The scroll view has get a frame now, which would the same as that of the view. But this doesn't describe the content inside it.
+        //  Depending on what you have inside the scroll view, the "contentSize" of the scroll view changes. I recommend adding a contentView
+        //  which will hold the contents of the scroll view which will have a fixed width/height depending on your scroll direciton.
         
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.leadingAnchor   .constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        contentView.topAnchor       .constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.trailingAnchor  .constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        contentView.bottomAnchor    .constraint(equalTo: scrollView.bottomAnchor).isActive = true
         contentView.widthAnchor     .constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-    }
-     // Notice how the scrollView is attached to the view's edges and the contentView which is inside the scrollView is also attached to the scrollview. But the scrollViews uses the content inside it to determine contentSize. The contentSize is the one that determines the scroll area, not the scrollview's frame and this contentSize is determined by what is inside the scrollView.
-    
-    func addRedView() {
-        contentView.addSubview(redView)
+        contentView.topAnchor       .constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor    .constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
-        redView.translatesAutoresizingMaskIntoConstraints = false
-        redView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        redView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        redView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-        redView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * (2/3)).isActive = true
-    }
-    
-    func addBlueView() {
-        contentView.addSubview(blueView)
+        redView.leadingAnchor       .constraint(equalTo: contentView.leadingAnchor).isActive = true
+        redView.trailingAnchor      .constraint(equalTo: contentView.trailingAnchor).isActive = true
+        redView.topAnchor           .constraint(equalTo: contentView.topAnchor).isActive = true
+        redView.heightAnchor        .constraint(equalToConstant: UIScreen.main.bounds.height * (2/3)).isActive = true
         
-        blueView.translatesAutoresizingMaskIntoConstraints = false
-        blueView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        blueView.topAnchor.constraint(equalTo: redView.bottomAnchor).isActive = true
-        blueView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        blueView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-        blueView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * (2/3)).isActive = true
+        blueView.leadingAnchor      .constraint(equalTo: contentView.leadingAnchor).isActive = true
+        blueView.trailingAnchor     .constraint(equalTo: contentView.trailingAnchor).isActive = true
+        blueView.topAnchor          .constraint(equalTo: redView.bottomAnchor).isActive = true
+        blueView.bottomAnchor       .constraint(equalTo: contentView.bottomAnchor).isActive = true
+        blueView.heightAnchor       .constraint(equalToConstant: UIScreen.main.bounds.height * (2/3)).isActive = true
+        
+        // The heights specified by you (or the intrinsic height if available) will help in defining the scroll height. The width can also be
+        // adjusted.
     }
     
 }
