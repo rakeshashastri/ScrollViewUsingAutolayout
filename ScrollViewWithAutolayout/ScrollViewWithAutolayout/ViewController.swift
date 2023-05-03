@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         
         contentView.leadingAnchor   .constraint(equalTo: scrollView.leadingAnchor).isActive = true
         contentView.trailingAnchor  .constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        contentView.widthAnchor     .constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
+        contentView.widthAnchor     .constraint(equalTo: scrollView.widthAnchor).isActive = true
         contentView.topAnchor       .constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.bottomAnchor    .constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
