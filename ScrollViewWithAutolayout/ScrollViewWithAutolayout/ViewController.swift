@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         scrollView.topAnchor        .constraint(equalTo: view.topAnchor).isActive = true
         scrollView.bottomAnchor     .constraint(equalTo: view.bottomAnchor).isActive = true
         
-        //  The scroll view has get a frame now, which would the same as that of the view. But this doesn't describe the content inside it.
+        //  The scroll view has got a frame now, which would the same as that of the view. But this doesn't describe the content inside it.
         //  Depending on what you have inside the scroll view, the "contentSize" of the scroll view changes. I recommend adding a container
         //  which will hold the contents of the scroll view which will have a fixed width/height depending on your scroll direciton.
         
